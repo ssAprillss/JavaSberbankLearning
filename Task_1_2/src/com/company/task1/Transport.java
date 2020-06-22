@@ -47,4 +47,6 @@ public class Transport {
     public void setAddInfo(int addInfo) {
         this.addInfo = addInfo;
     }
+
+
 }

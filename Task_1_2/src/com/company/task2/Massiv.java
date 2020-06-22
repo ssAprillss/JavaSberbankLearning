@@ -13,7 +13,7 @@ public class Massiv {
         return arr[index];
     }
 
-    //Установить значение указанного элемента
+    //Установить значение указанного элемента       
     public void set(int index, int value) {
         arr[index] = value;
     }
