@@ -112,17 +112,19 @@ public class GsmCalculation {
         System.out.printf("\n\nСортировка по %s\n", (byAddInfo ? "доп. информации:" : "пробегу:"));
         List<Transport> transportByType = new ArrayList<>();
         for (Transport transport : transports) {
-            if (transport.getType() == type && transportByType.isEmpty()) {         //Проверка совпадения типа, и начальных условий
-                transportByType.add(transport);
-            } else {
-                for (int i = 0; i < transportByType.size(); i++) {
-                    if (transportByType.get(i).getNumber() == transport.getNumber()) {          //Проверка на совпадение номера
-                        transportByType.get(i).setMileage(transportByType.get(i).getMileage() + transport.getMileage());
-                        transportByType.get(i).setAddInfo(transportByType.get(i).getAddInfo() + transport.getAddInfo());
-                        break;
-                    } else {
-                        transportByType.add(transport);
-                        break;
+            if (transport.getType() == type) {
+                if (transportByType.isEmpty()) {         //Проверка совпадения типа, и начальных условий
+                    transportByType.add(transport);
+                } else {
+                    for (int i = 0; i < transportByType.size(); i++) {
+                        if (transportByType.get(i).getNumber() == transport.getNumber()) {          //Проверка на совпадение номера
+                            transportByType.get(i).setMileage(transportByType.get(i).getMileage() + transport.getMileage());
+                            transportByType.get(i).setAddInfo(transportByType.get(i).getAddInfo() + transport.getAddInfo());
+                            break;
+                        } else {
+                            transportByType.add(transport);
+                            break;
+                        }
                     }
                 }
             }

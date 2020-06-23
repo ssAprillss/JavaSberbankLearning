@@ -2,10 +2,22 @@ package com.company.task4;
 
 public class LinkedList {
 
-    LinkedItem first;
-    LinkedItem last;
-    int size;
+    private LinkedItem first;
+    private LinkedItem last;
+    private int size;
 
+
+    public LinkedItem getFirst() {
+        return first;
+    }
+
+    public LinkedItem getLast() {
+        return last;
+    }
+
+    public int getSize() {
+        return size;
+    }
 
     public LinkedList(int[] values) {
         for (int a : values) {

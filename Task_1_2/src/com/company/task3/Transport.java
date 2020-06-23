@@ -6,15 +6,14 @@ public class Transport implements Maintenanceble {
     private int mileage;
     private int addInfo;
 //Конструктор получает на вход строку и парсит ее.
-    public Transport(String transportInfo) {
-        this.type = Integer.parseInt(transportInfo.split("_")[0].substring(1));
-        this.number = Integer.parseInt(transportInfo.split("_")[1].split("-")[0]);
-        this.mileage = Integer.parseInt(transportInfo.split("_")[1].split("-")[1]);
-        if(!transportInfo.split("_")[0].equals("C100")) {
-            this.addInfo = Integer.parseInt(transportInfo.split("_")[1].split("-")[2]);
-        }
-    }
 
+
+    public Transport(int type, int number, int mileage, int addInfo) {
+        this.type = type;
+        this.number = number;
+        this.mileage = mileage;
+        this.addInfo = addInfo;
+    }
 
     public int getType() {
         return type;
