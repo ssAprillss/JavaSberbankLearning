@@ -10,6 +10,7 @@ public class Main {
         primeNumbers.print(20,5);
         primeNumbers.setMaxNumber(25);
         primeNumbers.print();
+        primeNumbers.print();
 
 
     }
